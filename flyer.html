@@ -39,7 +39,9 @@ button{font:inherit;cursor:pointer}
 .langbox{position:relative}
 .langmenu{position:absolute;right:0;top:47px;background:var(--surface);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);padding:5px;display:none;min-width:140px;z-index:40}
 .langmenu.on{display:block}
-.langmenu button{display:flex;width:100%;gap:9px;background:none;border:none;color:var(--ink);padding:9px 11px;border-radius:9px;font-size:14px}
+.langmenu button{display:flex;width:100%;align-items:center;gap:11px;background:none;border:none;color:var(--ink);padding:10px 12px;border-radius:9px;font-size:14px}
+.langmenu .code{flex:none;width:22px;font-size:10.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.langmenu button[aria-current="true"] .code{color:var(--accent-hi)}
 .langmenu button:hover{background:var(--raise)}
 .langmenu button[aria-current="true"]{color:var(--accent-hi)}
 
@@ -77,11 +79,11 @@ footer a{color:var(--muted);text-decoration:underline;text-decoration-color:var(
     <div class="langbox">
       <button class="orb" id="langBtn" aria-label="Language" aria-expanded="false">PT</button>
       <div class="langmenu" id="langMenu">
-        <button data-lang="pt">🇵🇹 Português</button>
-        <button data-lang="en">🇬🇧 English</button>
-        <button data-lang="ru">🇷🇺 Русский</button>
-        <button data-lang="es">🇪🇸 Español</button>
-        <button data-lang="de">🇩🇪 Deutsch</button>
+        <button data-lang="pt"><span class="code">PT</span>Português</button>
+        <button data-lang="en"><span class="code">EN</span>English</button>
+        <button data-lang="ru"><span class="code">RU</span>Русский</button>
+        <button data-lang="es"><span class="code">ES</span>Español</button>
+        <button data-lang="de"><span class="code">DE</span>Deutsch</button>
       </div>
     </div>
     <button class="orb" id="themeBtn" aria-label="Theme"><span id="themeIcon">☾</span></button>
