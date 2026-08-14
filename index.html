@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>nRm — O Estado entra consigo</title>
+
+<link rel="icon" type="image/svg+xml" href="nrm-icon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="alternate" hreflang="pt" href="https://contratar.seedwave.pt/?lang=pt">
+<link rel="alternate" hreflang="en" href="https://contratar.seedwave.pt/?lang=en">
+<link rel="alternate" hreflang="ru" href="https://contratar.seedwave.pt/?lang=ru">
+<link rel="alternate" hreflang="es" href="https://contratar.seedwave.pt/?lang=es">
+<link rel="alternate" hreflang="de" href="https://contratar.seedwave.pt/?lang=de">
+<link rel="alternate" hreflang="x-default" href="https://contratar.seedwave.pt/">
+<meta name="apple-mobile-web-app-title" content="nRm">
+<meta name="theme-color" content="#080D11">
+<meta name="description" content="Quanto o IEM comparticipa quando contrata ou acolhe um estagiário na Madeira. Três perguntas, sem registo.">
+<meta property="og:title" content="nRm — O Estado entra consigo">
+<meta property="og:description" content="Apoios à contratação na Madeira em 3 perguntas. Sem registo, sem contactos.">
+<meta property="og:image" content="https://contratar.seedwave.pt/og-image.png">
+<meta property="og:url" content="https://contratar.seedwave.pt/">
+<link rel="canonical" href="https://contratar.seedwave.pt/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080D11; --surface:#101820; --raise:#17222C; --line:#20303C;
+  --ink:#E9EFF2; --muted:#7F929E; --accent:#17998A; --accent-hi:#4FC3B0; --warn:#D9A441;
+  --shadow:0 12px 36px rgba(0,0,0,.5); --icon-bg:#17998A;
+}
+[data-theme="light"]{
+  --bg:#F2F5F4; --surface:#FFFFFF; --raise:#E9F1EF; --line:#D8E3E0;
+  --ink:#0C1417; --muted:#5F7078; --accent:#0E7C6B; --accent-hi:#0E7C6B; --warn:#9A6F17;
+  --shadow:0 10px 28px rgba(12,30,28,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.5;padding-bottom:134px;transition:background .3s,color .3s}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent-hi);outline-offset:3px}
+
+/* topbar */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:560px;margin:0 auto;padding:14px 20px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:34px;height:34px;border-radius:9px;display:block}
+.brand .wm{font-family:Fraunces,serif;font-size:21px;letter-spacing:.01em}
+.ctrls{display:flex;gap:9px}
+.orb{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:600;letter-spacing:.04em}
+.langbox{position:relative}
+.langmenu{position:absolute;right:0;top:47px;background:var(--surface);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);padding:5px;display:none;min-width:140px;z-index:40}
+.langmenu.on{display:block}
+.langmenu button{display:flex;width:100%;align-items:center;gap:9px;background:none;border:none;color:var(--ink);padding:9px 11px;border-radius:9px;font-size:14px}
+.langmenu button:hover{background:var(--raise)}
+.langmenu button[aria-current="true"]{color:var(--accent-hi)}
+
+/* hero + wow */
+.head{padding:20px 0 4px;display:flex;gap:16px;align-items:flex-start}
+.head .txt{flex:1;min-width:0}
+.eye{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-hi)}
+h1{font-family:Fraunces,serif;font-weight:300;font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.01em}
+.lede{font-size:14px;color:var(--muted)}
+.wow{flex:none;width:86px;height:96px}
+.wow .seat{stroke:var(--line);stroke-width:2;fill:none;stroke-dasharray:5 5}
+.wow .fig{stroke:var(--accent-hi);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:240;stroke-dashoffset:240}
+.wow .figfill{fill:var(--accent);opacity:0}
+.filling .fig{animation:draw 1.15s cubic-bezier(.4,0,.2,1) forwards}
+.filling .figfill{animation:soak .7s .85s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes soak{to{opacity:.16}}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0 4px}
+.tab{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:13px;padding:13px 10px;text-align:left}
+.tab b{display:block;font-size:14.5px;color:var(--ink);font-weight:600}
+.tab span{font-size:11.5px}
+.tab[aria-pressed="true"]{border-color:var(--accent);background:var(--raise)}
+.tab[aria-pressed="true"] b{color:var(--accent-hi)}
+
+.q{margin-top:22px}
+.q h3{font-size:13px;font-weight:600;margin-bottom:3px}
+.q .note{font-size:12px;color:var(--muted);margin-bottom:10px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.o{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:13px 14px;text-align:left;color:var(--ink);width:100%}
+.o .dot{flex:none;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--muted);position:relative}
+.o[aria-pressed="true"]{border-color:var(--accent);background:var(--raise)}
+.o[aria-pressed="true"] .dot{border-color:var(--accent-hi)}
+.o[aria-pressed="true"] .dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--accent-hi)}
+.o .t{flex:1;font-size:14px}
+.o .t small{display:block;color:var(--muted);font-size:11.5px;margin-top:1px}
+.o .v{font-family:Fraunces,serif;font-size:15px;color:var(--muted);white-space:nowrap}
+.o[aria-pressed="true"] .v{color:var(--accent-hi)}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.row .o{flex-direction:column;gap:4px;text-align:center;padding:12px 6px}
+.row .o .dot{display:none}
+.toggle{display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:13px 14px}
+.toggle .tt{font-size:14px}
+.sw{flex:none;width:46px;height:27px;border-radius:99px;background:var(--line);border:none;position:relative;transition:background .18s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:var(--muted);transition:transform .18s,background .18s}
+.sw[aria-pressed="true"]{background:var(--accent)}
+.sw[aria-pressed="true"]::after{transform:translateX(19px);background:#fff}
+
+/* result bar */
+.res{position:fixed;left:0;right:0;bottom:0;z-index:30;background:color-mix(in srgb,var(--bg) 93%,transparent);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:12px 20px calc(12px + env(safe-area-inset-bottom))}
+.res-in{max-width:560px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.res .lbl{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.res .big{font-family:Fraunces,serif;font-size:31px;color:var(--accent-hi);line-height:1.12}
+.res .big.pulse{animation:pop .42s ease}
+@keyframes pop{0%{opacity:.35;transform:translateY(4px)}100%{opacity:1;transform:none}}
+.res .sub{font-size:11.5px;color:var(--muted)}
+.mini{flex:none;width:44px;height:44px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.mini svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* sheet */
+.sheet{position:fixed;inset:0;z-index:50;background:var(--bg);display:none;overflow-y:auto;padding:24px 20px 40px}
+.sheet.on{display:block}
+.sheet-in{max-width:560px;margin:0 auto}
+.sheet h2{font-family:Fraunces,serif;font-weight:400;font-size:25px;margin-bottom:4px}
+.s-sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+.brk{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden;margin-bottom:15px}
+.brk .r{display:flex;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line);font-size:13.5px}
+.brk .r:last-child{border-bottom:none}
+.brk .r.total{background:var(--raise)}
+.brk .r.total .rv{font-family:Fraunces,serif;font-size:21px;color:var(--accent-hi)}
+.rk{color:var(--muted)} .rv{font-weight:500;white-space:nowrap}
+.cond{border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:15px}
+.cond h4{font-size:13px;margin-bottom:9px}
+.cond li{list-style:none;font-size:13px;color:var(--muted);padding-left:19px;position:relative;margin-bottom:7px}
+.cond li::before{content:"—";position:absolute;left:0;color:var(--accent-hi)}
+.warn{border:1px solid var(--warn);border-radius:14px;padding:15px;font-size:13px;margin-bottom:15px}
+.warn b{color:var(--warn)}
+.src{font-size:11.5px;color:var(--muted);line-height:1.7;margin-bottom:18px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.btn{border-radius:12px;padding:14px;font-weight:600;font-size:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#04100D}
+[data-theme="light"] .btn.pri{color:#fff}
+.close{margin-top:9px;width:100%;background:none;border:1px solid var(--line);color:var(--muted);border-radius:12px;padding:13px;font-size:13.5px}
+
+footer{padding:34px 0 60px;text-align:center;font-size:15px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;display:inline-block;padding:8px 4px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .wow .fig{stroke-dashoffset:0}.wow .figfill{opacity:.16}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand">
+    <img src="nrm-icon.svg" alt="" onerror="this.style.display='none'">
+    <span class="wm">nRm</span>
+  </div>
+  <div class="ctrls">
+    <div class="langbox">
+      <button class="orb" id="langBtn" aria-label="Language" aria-expanded="false">PT</button>
+      <div class="langmenu" id="langMenu">
+        <button data-lang="pt">🇵🇹 Português</button>
+        <button data-lang="en">🇬🇧 English</button>
+        <button data-lang="ru">🇷🇺 Русский</button>
+        <button data-lang="es">🇪🇸 Español</button>
+        <button data-lang="de">🇩🇪 Deutsch</button>
+      </div>
+    </div>
+    <button class="orb" id="themeBtn" aria-label="Theme"><span id="themeIcon">☾</span></button>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="head">
+    <div class="txt">
+      <div class="eye" data-t="eye">IEM · Madeira</div>
+      <h1 data-t="h1">O Estado entra consigo</h1>
+      <p class="lede" data-t="lede">Três perguntas — e sabe quanto recebe por contratar. Sem registo.</p>
+    </div>
+    <svg class="wow" id="wow" viewBox="0 0 86 96" aria-hidden="true">
+      <rect class="seat" x="9" y="26" width="68" height="62" rx="12"/>
+      <path class="figfill" d="M43 38a11 11 0 1 1 0 22 11 11 0 0 1 0-22zM24 86c0-11 8.5-19 19-19s19 8 19 19z"/>
+      <circle class="fig" cx="43" cy="49" r="11"/>
+      <path class="fig" d="M24 86c0-11 8.5-19 19-19s19 8 19 19"/>
+    </svg>
+  </header>
+
+  <div class="tabs">
+    <button class="tab" data-mode="pic" aria-pressed="true"><b data-t="tabPicT">Contratar</b><span data-t="tabPicS">Contrato · PIC</span></button>
+    <button class="tab" data-mode="ep" aria-pressed="false"><b data-t="tabEpT">Estágio</b><span data-t="tabEpS">12 meses · EP</span></button>
+  </div>
+
+  <div id="form"></div>
+
+  <p style="margin-top:26px;text-align:center"><a href="flyer.html" style="color:var(--accent-hi);font-size:14px;text-decoration:underline;text-underline-offset:4px;display:inline-block;padding:8px" data-t="more">Como funciona</a></p>
+
+  <footer>
+    © <span id="yr"></span> <a href="https://seedwave.pt/hub/" target="_blank" rel="noopener" id="hubLink">SeedWave</a> ·
+    <a href="https://www.linkedin.com/in/igorkartuzov/" target="_blank" rel="noopener">Igor Kartuzov</a>
+  </footer>
+</div>
+
+<div class="res"><div class="res-in">
+  <div style="flex:1;min-width:0">
+    <div class="lbl" id="resLbl"></div>
+    <div class="big" id="resBig">—</div>
+    <div class="sub" id="resSub"></div>
+  </div>
+  <button class="mini" id="shareBtn" aria-label="Share">
+    <svg viewBox="0 0 24 24"><path d="M12 16V4M12 4 8 8M12 4l4 4"/><path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>
+  </button>
+  <button class="mini" id="detBtn" aria-label="Detail" style="width:auto;padding:0 15px;font-size:13.5px"><span data-t="detail">Detalhe</span></button>
+</div></div>
+
+<div class="sheet" id="sheet"><div class="sheet-in">
+  <h2 id="shTitle"></h2>
+  <p class="s-sub" id="shSub"></p>
+  <div class="brk" id="shBrk"></div>
+  <div class="cond"><h4 data-t="condT"></h4><ul id="shCond"></ul></div>
+  <div class="warn" id="shWarn"></div>
+  <p class="src" id="shSrc"></p>
+  <div class="acts">
+    <button class="btn pri" id="askBtn" data-t="ask">Falar comigo</button>
+    <button class="btn" id="shareBtn2" data-t="shareBtn">Enviar a alguém</button>
+  </div>
+  <button class="close" id="shClose" data-t="close">Fechar</button>
+</div></div>
+
+<script>
+/* ---------- Слой 3: контент (числа из портарий) ---------- */
+const RMMG=980, IAS=537.13;
+const PIC={ m6:{st:12,tc:4.8}, y35:{st:14,tc:5.6}, ld:{st:16,tc:6.4}, a55:{st:18,tc:7.2}, dis:{st:20,tc:8} };
+const EPM={n4:765.33,n5:800.24,n6:904.98,n7:974.81,n8:1079.55};
+const BOLSA={n4:859.41,n5:913.12,n6:1074.26,n7:1181.69,n8:1342.83};
+const BOT='https://t.me/SeedWaveBot?start=nrm';
+
+/* ---------- Слой 2: локали (при заливке в репо выносятся в ui.{lang}.json) ---------- */
+const T={
+pt:{lg:'PT',eye:'IEM · Madeira',h1:'O Estado entra consigo',
+ lede:'Três perguntas — e sabe quanto recebe por contratar. Sem registo.',
+ tabPicT:'Contratar',tabPicS:'Contrato · PIC',tabEpT:'Estágio',tabEpS:'12 meses · EP',
+ qWho:'Quem vai contratar?',qWhoN:'Tem de estar inscrito no IEM como desempregado.',
+ y35:'Jovem até 35 anos',y35s:'inscrito há 90 dias ou mais',m6:'Inscrito há 6 meses ou mais',
+ ld:'Longa duração, 45+ ou RSI',ld_s:'inscrito há 12 meses / 90 dias',a55:'55 anos ou mais',dis:'Deficiência ≥ 60%',
+ qCon:'Que contrato?',qConN:'O apoio muda conforme a duração.',st:'Sem termo',tc:'A termo certo',tcs:'12 meses ou mais',
+ qMaj:'Majoração de 10%',qMajN:'Economia azul, verde ou circular; ou profissão com desequilíbrio de género.',
+ majOn:'Aplica-se',majOff:'Não se aplica',
+ qTime:'Horário',qTimeN:'A tempo parcial o apoio é proporcional.',
+ qLvl:'Qualificação do estagiário',qLvlN:'Níveis 4 a 8 do Quadro Nacional de Qualificações.',
+ qPrem:'Contratar no fim do estágio?',qPremN:'Prémio de Emprego, se houver criação líquida de posto.',
+ premSt:'Sim, sem termo',premTc:'Sim, a termo',premNo:'Ainda não sei',
+ lblPic:'Apoio por posto de trabalho',lblEp:'Comparticipação no primeiro ano',
+ subPic:'pago pelo IEM após aprovação',subEp:'12 meses + prémio',
+ detail:'Detalhe',close:'Fechar',shTitle:'Como se chega a este valor',
+ rBase:'Valor base',rMaj:'Majoração 10%',rTime:'Proporção do horário',rTotal:'Total',
+ rMonth:'Comparticipação mensal',rYear:'12 meses',rPrem:'Prémio de Emprego',rBolsa:'Bolsa que a empresa paga',
+ condT:'Condições que a empresa tem de cumprir',
+ c1:'Sede, delegação ou sucursal na Madeira',c2:'Situação regularizada nas Finanças e Segurança Social',
+ c3:'Contabilidade organizada',c4:'Criação líquida de posto de trabalho',
+ c5:'Não pode contratar quem já trabalhou na empresa nos últimos 5 anos',c6:'Sem salários em atraso',
+ warn:'<b>Atenção.</b> Estes apoios só cobrem pessoas inscritas como desempregadas no IEM, na Madeira. Quem vem de fora da Região não entra enquanto não estiver inscrito o tempo exigido.',
+ srcPic:'Fonte: IEM, IP-RAM — Programa de Incentivos à Contratação. Portaria n.º 191/2015, alterada pela Portaria n.º 913/2024, de 18 de dezembro. RMMG-RAM 980,00 €. Candidaturas abertas em permanência.',
+ srcEp:'Fonte: IEM, IP-RAM — Estágios Profissionais em entidades privadas. Portaria n.º 206/2018, alterada pela Portaria n.º 522/2023. Despacho n.º 110/2026, de 26 de fevereiro. IAS 537,13 €.',
+ ask:'Falar comigo',shareBtn:'Enviar a alguém',shareCopied:'Ligação copiada ✓',
+ shareText:'O Estado entra consigo. Vê em 3 perguntas quanto o IEM comparticipa quando contratas na Madeira:',
+ more:'Como funciona'},
+en:{lg:'EN',eye:'IEM · Madeira',h1:'The State chips in',
+ lede:'Three questions — and you know what you get for hiring. No sign-up.',
+ tabPicT:'Hiring',tabPicS:'Contract · PIC',tabEpT:'Traineeship',tabEpS:'12 months · EP',
+ qWho:'Who are you hiring?',qWhoN:'Must be registered as unemployed with IEM.',
+ y35:'Under 35',y35s:'registered 90 days or more',m6:'Registered 6 months or more',
+ ld:'Long-term, 45+ or RSI',ld_s:'registered 12 months / 90 days',a55:'55 or older',dis:'Disability ≥ 60%',
+ qCon:'Which contract?',qConN:'Support depends on the term.',st:'Open-ended',tc:'Fixed term',tcs:'12 months or more',
+ qMaj:'10% uplift',qMajN:'Blue, green or circular economy; or a gender-imbalanced occupation.',
+ majOn:'Applies',majOff:'Does not apply',
+ qTime:'Hours',qTimeN:'Part-time support is proportional.',
+ qLvl:'Trainee qualification',qLvlN:'Levels 4 to 8 of the National Qualifications Framework.',
+ qPrem:'Hire at the end?',qPremN:'Employment Premium, if the post is a net addition.',
+ premSt:'Yes, open-ended',premTc:'Yes, fixed term',premNo:'Not decided',
+ lblPic:'Support per job created',lblEp:'Support in the first year',
+ subPic:'paid by IEM after approval',subEp:'12 months + premium',
+ detail:'Detail',close:'Close',shTitle:'How this figure is reached',
+ rBase:'Base amount',rMaj:'10% uplift',rTime:'Hours proportion',rTotal:'Total',
+ rMonth:'Monthly support',rYear:'12 months',rPrem:'Employment Premium',rBolsa:'Allowance paid by the company',
+ condT:'Conditions the company must meet',
+ c1:'Registered office or branch in Madeira',c2:'Clear standing with tax authority and Social Security',
+ c3:'Organised accounting',c4:'The post must be a net addition to headcount',
+ c5:'Cannot hire someone who worked for the company in the last 5 years',c6:'No overdue wages',
+ warn:'<b>Note.</b> These schemes only cover people registered as unemployed with IEM in Madeira. Someone arriving from outside the Region does not qualify until registered for the required period.',
+ srcPic:'Source: IEM, IP-RAM — Hiring Incentives Programme. Portaria 191/2015, amended by Portaria 913/2024 of 18 December. RMMG-RAM €980.00. Applications open permanently.',
+ srcEp:'Source: IEM, IP-RAM — Professional Traineeships in private entities. Portaria 206/2018, amended by Portaria 522/2023. Despacho 110/2026 of 26 February. IAS €537.13.',
+ ask:'Talk to me',shareBtn:'Send to someone',shareCopied:'Link copied ✓',
+ shareText:'The State chips in. Three questions to see what IEM pays when you hire in Madeira:',
+ more:'How it works'},
+ru:{lg:'RU',eye:'IEM · Мадейра',h1:'Государство вкладывается с вами',
+ lede:'Три вопроса — и вы знаете, сколько получите за наём. Без регистрации.',
+ tabPicT:'Наём',tabPicS:'Договор · PIC',tabEpT:'Стажировка',tabEpS:'12 месяцев · EP',
+ qWho:'Кого нанимаете?',qWhoN:'Человек должен стоять на учёте в IEM как безработный.',
+ y35:'Молодой, до 35 лет',y35s:'на учёте от 90 дней',m6:'На учёте 6 месяцев и дольше',
+ ld:'Длительно безработный, 45+ или RSI',ld_s:'на учёте 12 месяцев / 90 дней',a55:'55 лет и старше',dis:'Инвалидность ≥ 60%',
+ qCon:'Какой договор?',qConN:'Размер зависит от срока договора.',st:'Бессрочный',tc:'Срочный',tcs:'от 12 месяцев',
+ qMaj:'Надбавка 10%',qMajN:'Синяя, зелёная или циркулярная экономика; либо профессия с гендерным перекосом.',
+ majOn:'Применяется',majOff:'Не применяется',
+ qTime:'Занятость',qTimeN:'При неполном дне сумма пропорциональна.',
+ qLvl:'Квалификация стажёра',qLvlN:'Уровни 4–8 Национальной рамки квалификаций.',
+ qPrem:'Возьмёте в штат после стажировки?',qPremN:'Премия за трудоустройство — при чистом приросте рабочих мест.',
+ premSt:'Да, бессрочно',premTc:'Да, срочный',premNo:'Пока не решил',
+ lblPic:'Выплата за рабочее место',lblEp:'Компенсация за первый год',
+ subPic:'платит IEM после одобрения',subEp:'12 месяцев + премия',
+ detail:'Расчёт',close:'Закрыть',shTitle:'Откуда берётся эта сумма',
+ rBase:'Базовая сумма',rMaj:'Надбавка 10%',rTime:'Доля занятости',rTotal:'Итого',
+ rMonth:'Компенсация в месяц',rYear:'12 месяцев',rPrem:'Премия за трудоустройство',rBolsa:'Стипендия, которую платит компания',
+ condT:'Что требуется от компании',
+ c1:'Юридический адрес или филиал на Мадейре',c2:'Чистая налоговая и Segurança Social',
+ c3:'Организованная бухгалтерия',c4:'Рабочее место — чистый прирост штата',
+ c5:'Нельзя нанимать тех, кто работал в компании последние 5 лет',c6:'Нет задержек по зарплате',
+ warn:'<b>Важно.</b> Эти программы работают только для людей, стоящих на учёте в IEM на Мадейре. Приехавший из другого региона не подходит, пока не отстоит на учёте нужный срок.',
+ srcPic:'Источник: IEM, IP-RAM — Программа стимулов к найму. Portaria 191/2015 в редакции Portaria 913/2024 от 18 декабря. RMMG-RAM 980,00 €. Приём заявок открыт постоянно.',
+ srcEp:'Источник: IEM, IP-RAM — Профессиональные стажировки в частных организациях. Portaria 206/2018 в редакции Portaria 522/2023. Despacho 110/2026 от 26 февраля. IAS 537,13 €.',
+ ask:'Обсудить со мной',shareBtn:'Отправить знакомому',shareCopied:'Ссылка скопирована ✓',
+ shareText:'Государство вкладывается вместе с вами. Три вопроса — и видно, сколько платит IEM за наём на Мадейре:',
+ more:'Как это работает'},
+es:{lg:'ES',eye:'IEM · Madeira',h1:'El Estado entra contigo',
+ lede:'Tres preguntas y sabrás cuánto recibes por contratar. Sin registro.',
+ tabPicT:'Contratar',tabPicS:'Contrato · PIC',tabEpT:'Prácticas',tabEpS:'12 meses · EP',
+ qWho:'¿A quién vas a contratar?',qWhoN:'Debe estar inscrito en el IEM como desempleado.',
+ y35:'Joven hasta 35 años',y35s:'inscrito 90 días o más',m6:'Inscrito 6 meses o más',
+ ld:'Larga duración, 45+ o RSI',ld_s:'inscrito 12 meses / 90 días',a55:'55 años o más',dis:'Discapacidad ≥ 60%',
+ qCon:'¿Qué contrato?',qConN:'La ayuda cambia según la duración.',st:'Indefinido',tc:'Temporal',tcs:'12 meses o más',
+ qMaj:'Incremento del 10%',qMajN:'Economía azul, verde o circular; o profesión con desequilibrio de género.',
+ majOn:'Se aplica',majOff:'No se aplica',
+ qTime:'Jornada',qTimeN:'A tiempo parcial la ayuda es proporcional.',
+ qLvl:'Cualificación del becario',qLvlN:'Niveles 4 a 8 del Marco Nacional de Cualificaciones.',
+ qPrem:'¿Contratar al terminar?',qPremN:'Premio de Empleo, si hay creación neta de puesto.',
+ premSt:'Sí, indefinido',premTc:'Sí, temporal',premNo:'Aún no lo sé',
+ lblPic:'Ayuda por puesto creado',lblEp:'Ayuda en el primer año',
+ subPic:'la paga el IEM tras la aprobación',subEp:'12 meses + premio',
+ detail:'Detalle',close:'Cerrar',shTitle:'De dónde sale esta cifra',
+ rBase:'Importe base',rMaj:'Incremento 10%',rTime:'Proporción de jornada',rTotal:'Total',
+ rMonth:'Ayuda mensual',rYear:'12 meses',rPrem:'Premio de Empleo',rBolsa:'Beca que paga la empresa',
+ condT:'Condiciones que debe cumplir la empresa',
+ c1:'Sede, delegación o sucursal en Madeira',c2:'Situación al día con Hacienda y Seguridad Social',
+ c3:'Contabilidad organizada',c4:'Creación neta de puesto de trabajo',
+ c5:'No puede contratar a quien ya trabajó en la empresa en los últimos 5 años',c6:'Sin salarios atrasados',
+ warn:'<b>Atención.</b> Estas ayudas solo cubren a personas inscritas como desempleadas en el IEM, en Madeira. Quien llega de fuera de la Región no entra hasta estar inscrito el tiempo exigido.',
+ srcPic:'Fuente: IEM, IP-RAM — Programa de Incentivos a la Contratación. Portaria 191/2015, modificada por la Portaria 913/2024, de 18 de diciembre. RMMG-RAM 980,00 €. Solicitudes abiertas de forma permanente.',
+ srcEp:'Fuente: IEM, IP-RAM — Prácticas Profesionales en entidades privadas. Portaria 206/2018, modificada por la Portaria 522/2023. Despacho 110/2026, de 26 de febrero. IAS 537,13 €.',
+ ask:'Hablar conmigo',shareBtn:'Enviar a alguien',shareCopied:'Enlace copiado ✓',
+ shareText:'El Estado entra contigo. Tres preguntas para ver cuánto aporta el IEM al contratar en Madeira:',
+ more:'Cómo funciona'},
+de:{lg:'DE',eye:'IEM · Madeira',h1:'Der Staat steigt mit ein',
+ lede:'Drei Fragen — und Sie wissen, was eine Einstellung einbringt. Ohne Anmeldung.',
+ tabPicT:'Einstellen',tabPicS:'Vertrag · PIC',tabEpT:'Praktikum',tabEpS:'12 Monate · EP',
+ qWho:'Wen stellen Sie ein?',qWhoN:'Muss beim IEM arbeitslos gemeldet sein.',
+ y35:'Bis 35 Jahre',y35s:'seit mindestens 90 Tagen gemeldet',m6:'Seit 6 Monaten oder länger gemeldet',
+ ld:'Langzeit, 45+ oder RSI',ld_s:'seit 12 Monaten / 90 Tagen gemeldet',a55:'55 Jahre oder älter',dis:'Behinderung ≥ 60%',
+ qCon:'Welcher Vertrag?',qConN:'Die Förderung hängt von der Laufzeit ab.',st:'Unbefristet',tc:'Befristet',tcs:'12 Monate oder mehr',
+ qMaj:'Zuschlag von 10%',qMajN:'Blaue, grüne oder Kreislaufwirtschaft; oder Beruf mit Geschlechterungleichgewicht.',
+ majOn:'Trifft zu',majOff:'Trifft nicht zu',
+ qTime:'Arbeitszeit',qTimeN:'Bei Teilzeit anteilig.',
+ qLvl:'Qualifikation des Praktikanten',qLvlN:'Stufen 4 bis 8 des nationalen Qualifikationsrahmens.',
+ qPrem:'Am Ende übernehmen?',qPremN:'Beschäftigungsprämie bei Netto-Stellenzuwachs.',
+ premSt:'Ja, unbefristet',premTc:'Ja, befristet',premNo:'Noch offen',
+ lblPic:'Förderung je Arbeitsplatz',lblEp:'Förderung im ersten Jahr',
+ subPic:'vom IEM nach Bewilligung gezahlt',subEp:'12 Monate + Prämie',
+ detail:'Details',close:'Schließen',shTitle:'So kommt der Betrag zustande',
+ rBase:'Grundbetrag',rMaj:'Zuschlag 10%',rTime:'Arbeitszeitanteil',rTotal:'Gesamt',
+ rMonth:'Monatliche Förderung',rYear:'12 Monate',rPrem:'Beschäftigungsprämie',rBolsa:'Vom Betrieb gezahlte Vergütung',
+ condT:'Voraussetzungen für den Betrieb',
+ c1:'Sitz oder Niederlassung auf Madeira',c2:'Keine Rückstände bei Finanzamt und Sozialversicherung',
+ c3:'Ordnungsgemäße Buchführung',c4:'Der Arbeitsplatz muss ein Netto-Zuwachs sein',
+ c5:'Keine Einstellung früherer Mitarbeiter der letzten 5 Jahre',c6:'Keine ausstehenden Löhne',
+ warn:'<b>Hinweis.</b> Diese Programme gelten nur für Personen, die auf Madeira beim IEM arbeitslos gemeldet sind. Wer von außerhalb kommt, qualifiziert sich erst nach der erforderlichen Meldedauer.',
+ srcPic:'Quelle: IEM, IP-RAM — Programm für Einstellungsanreize. Portaria 191/2015, geändert durch Portaria 913/2024 vom 18. Dezember. RMMG-RAM 980,00 €. Anträge dauerhaft möglich.',
+ srcEp:'Quelle: IEM, IP-RAM — Berufspraktika in privaten Einrichtungen. Portaria 206/2018, geändert durch Portaria 522/2023. Despacho 110/2026 vom 26. Februar. IAS 537,13 €.',
+ ask:'Mit mir sprechen',shareBtn:'Weiterleiten',shareCopied:'Link kopiert ✓',
+ shareText:'Der Staat steigt mit ein. Drei Fragen zeigen, was das IEM bei einer Einstellung auf Madeira zahlt:',
+ more:'So funktioniert es'}
+};
+
+/* ---------- Слой 1: движок ---------- */
+const $=s=>document.querySelector(s);
+const LOC={pt:'pt-PT',en:'en-GB',ru:'ru-RU',es:'es-ES',de:'de-DE'};
+const P=new URLSearchParams(location.search);
+let lang=P.get('lang')||localStorage.getItem('nrm.lang')||(navigator.languages||[navigator.language||'pt']).map(l=>l.slice(0,2).toLowerCase()).find(l=>T[l])||'pt';
+if(!T[lang])lang='pt';
+let theme=P.get('theme')||localStorage.getItem('nrm.theme')||'dark';
+let mode='pic', who='y35', con='st', maj=false, hours=40, lvl='n4', prem='premSt';
+
+const money=v=>new Intl.NumberFormat(LOC[lang],{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);
+const money2=v=>new Intl.NumberFormat(LOC[lang],{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2}).format(v);
+
+function calc(){
+  if(mode==='pic'){
+    const base=PIC[who][con]*RMMG, withMaj=maj?base*1.1:base;
+    return {base,withMaj,total:withMaj*(hours/40)};
+  }
+  const month=EPM[lvl], year=month*12;
+  const p=prem==='premSt'?8*RMMG:prem==='premTc'?4*RMMG:0;
+  return {month,year,prem:p,bolsa:BOLSA[lvl],total:year+p};
+}
+
+function form(){
+  const t=T[lang];
+  $('#form').innerHTML = mode==='pic' ? `
+    <div class="q"><h3>${t.qWho}</h3><div class="note">${t.qWhoN}</div><div class="opts">
+      ${[['y35',t.y35,t.y35s],['m6',t.m6,''],['ld',t.ld,t.ld_s],['a55',t.a55,''],['dis',t.dis,'']]
+        .map(([k,n,s])=>`<button class="o" data-k="who" data-v="${k}" aria-pressed="${who===k}"><span class="dot"></span><span class="t">${n}${s?`<small>${s}</small>`:''}</span><span class="v">${money(PIC[k][con]*RMMG)}</span></button>`).join('')}
+    </div></div>
+    <div class="q"><h3>${t.qCon}</h3><div class="note">${t.qConN}</div><div class="opts">
+      <button class="o" data-k="con" data-v="st" aria-pressed="${con==='st'}"><span class="dot"></span><span class="t">${t.st}</span><span class="v">${money(PIC[who].st*RMMG)}</span></button>
+      <button class="o" data-k="con" data-v="tc" aria-pressed="${con==='tc'}"><span class="dot"></span><span class="t">${t.tc}<small>${t.tcs}</small></span><span class="v">${money(PIC[who].tc*RMMG)}</span></button>
+    </div></div>
+    <div class="q"><h3>${t.qMaj}</h3><div class="note">${t.qMajN}</div>
+      <div class="toggle"><div class="tt">${maj?t.majOn:t.majOff}</div><button class="sw" id="majSw" aria-pressed="${maj}" aria-label="+10%"></button></div></div>
+    <div class="q"><h3>${t.qTime}</h3><div class="note">${t.qTimeN}</div><div class="row">
+      ${[40,30,20].map(h=>`<button class="o" data-k="hours" data-v="${h}" aria-pressed="${hours===h}"><span class="t">${h}h</span></button>`).join('')}
+    </div></div>` : `
+    <div class="q"><h3>${t.qLvl}</h3><div class="note">${t.qLvlN}</div><div class="opts">
+      ${['n4','n5','n6','n7','n8'].map(k=>`<button class="o" data-k="lvl" data-v="${k}" aria-pressed="${lvl===k}"><span class="dot"></span><span class="t">${k.toUpperCase().replace('N','')} · ${t.qLvl.split(' ')[0]}<small>${t.rBolsa}: ${money2(BOLSA[k])}</small></span><span class="v">${money2(EPM[k])}</span></button>`).join('')}
+    </div></div>
+    <div class="q"><h3>${t.qPrem}</h3><div class="note">${t.qPremN}</div><div class="opts">
+      ${[['premSt',t.premSt,8*RMMG],['premTc',t.premTc,4*RMMG],['premNo',t.premNo,0]]
+        .map(([k,n,v])=>`<button class="o" data-k="prem" data-v="${k}" aria-pressed="${prem===k}"><span class="dot"></span><span class="t">${n}</span><span class="v">${v?money(v):'—'}</span></button>`).join('')}
+    </div></div>`;
+}
+
+function result(){
+  const t=T[lang], c=calc();
+  $('#resLbl').textContent = mode==='pic'?t.lblPic:t.lblEp;
+  $('#resBig').textContent = money(Math.round(c.total));
+  $('#resSub').textContent = mode==='pic'?t.subPic:t.subEp;
+  const b=$('#resBig'); b.classList.remove('pulse'); void b.offsetWidth; b.classList.add('pulse');
+  const w=$('#wow'); w.classList.remove('filling'); void w.offsetWidth; w.classList.add('filling');
+}
+
+function sheet(){
+  const t=T[lang], c=calc();
+  $('#shTitle').textContent=t.shTitle;
+  $('#shSub').textContent = mode==='pic'?t.tabPicS:t.tabEpS;
+  const R=(k,v)=>`<div class="r"><span class="rk">${k}</span><span class="rv">${v}</span></div>`;
+  $('#shBrk').innerHTML = mode==='pic'
+    ? R(t.rBase,money2(c.base)) + (maj?R(t.rMaj,'+ '+money2(c.withMaj-c.base)):'') + (hours!==40?R(t.rTime,hours+'/40'):'')
+      + `<div class="r total"><span class="rk">${t.rTotal}</span><span class="rv">${money2(c.total)}</span></div>`
+    : R(t.rMonth,money2(c.month)) + R(t.rYear,money2(c.year)) + (c.prem?R(t.rPrem,money2(c.prem)):'') + R(t.rBolsa,money2(c.bolsa))
+      + `<div class="r total"><span class="rk">${t.rTotal}</span><span class="rv">${money2(c.total)}</span></div>`;
+  $('#shCond').innerHTML=[t.c1,t.c2,t.c3,t.c4,t.c5,t.c6].map(x=>`<li>${x}</li>`).join('');
+  $('#shWarn').innerHTML=t.warn;
+  $('#shSrc').textContent = mode==='pic'?t.srcPic:t.srcEp;
+}
+
+function statics(){
+  const t=T[lang];
+  document.querySelectorAll('[data-t]').forEach(el=>{if(t[el.dataset.t]!==undefined)el.textContent=t[el.dataset.t]});
+  document.documentElement.lang=lang;
+  $('#langBtn').textContent=t.lg;
+  document.querySelectorAll('#langMenu button').forEach(b=>b.setAttribute('aria-current',b.dataset.lang===lang));
+  $('#yr').textContent=new Date().getFullYear();
+  $('#hubLink').href='https://seedwave.pt/hub/?lang='+lang+'&theme='+theme;
+}
+function paint(){statics();form();result();}
+
+function applyTheme(){
+  document.documentElement.dataset.theme=theme;
+  $('#themeIcon').textContent=theme==='dark'?'☾':'☀';
+  document.querySelector('meta[name=theme-color]').content=theme==='dark'?'#080D11':'#F2F5F4';
+  localStorage.setItem('nrm.theme',theme);
+}
+
+async function share(){
+  const t=T[lang];
+  const url='https://contratar.seedwave.pt/?lang='+lang;
+  const text=t.shareText+' '+url;
+  try{ if(navigator.share){ await navigator.share({title:'nRm — '+t.h1,text:t.shareText,url}); return; } }catch(e){}
+  try{ await navigator.clipboard.writeText(text);
+    const b=$('#shareBtn2'); if(b){const o=b.textContent;b.textContent=t.shareCopied;setTimeout(()=>b.textContent=o,1800);}
+  }catch(e){}
+}
+
+document.addEventListener('click',e=>{
+  const o=e.target.closest('.o');
+  if(o){const k=o.dataset.k,v=o.dataset.v;
+    if(k==='hours')hours=+v; else if(k==='who')who=v; else if(k==='con')con=v;
+    else if(k==='lvl')lvl=v; else if(k==='prem')prem=v;
+    form();result();return;}
+  if(e.target.closest('#majSw')){maj=!maj;form();result();return;}
+  const tb=e.target.closest('.tab');
+  if(tb){mode=tb.dataset.mode;document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-pressed',x===tb));paint();return;}
+  const lg=e.target.closest('[data-lang]');
+  if(lg){lang=lg.dataset.lang;localStorage.setItem('nrm.lang',lang);paint();return;}
+  if(!e.target.closest('#langBtn'))$('#langMenu').classList.remove('on');
+});
+$('#langBtn').addEventListener('click',e=>{e.stopPropagation();
+  const m=$('#langMenu');m.classList.toggle('on');
+  $('#langBtn').setAttribute('aria-expanded',m.classList.contains('on'));});
+$('#themeBtn').addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';applyTheme();});
+$('#detBtn').addEventListener('click',()=>{sheet();$('#sheet').classList.add('on');});
+$('#shClose').addEventListener('click',()=>$('#sheet').classList.remove('on'));
+$('#shareBtn').addEventListener('click',share);
+$('#shareBtn2').addEventListener('click',share);
+$('#askBtn').addEventListener('click',()=>{window.open(BOT+'_'+lang,'_blank','noopener');});
+
+applyTheme(); paint();
+</script>
+</body>
+</html>

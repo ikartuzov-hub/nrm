@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>nRm — Como funciona</title>
+
+<link rel="icon" type="image/svg+xml" href="nrm-icon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="nRm">
+<meta name="theme-color" content="#080D11">
+<meta name="description" content="Apoios à contratação na Madeira: PIC e Estágios Profissionais do IEM, IP-RAM. O que é, quanto é, o que a empresa tem de cumprir.">
+<link rel="canonical" href="https://contratar.seedwave.pt/flyer.html">
+<meta property="og:title" content="nRm — O Estado entra consigo">
+<meta property="og:description" content="Apoios à contratação na Madeira em 3 perguntas. Sem registo, sem contactos.">
+<meta property="og:image" content="https://contratar.seedwave.pt/og-image.png">
+<meta property="og:url" content="https://contratar.seedwave.pt/flyer.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080D11;--surface:#101820;--raise:#17222C;--line:#20303C;--ink:#E9EFF2;--muted:#7F929E;--accent:#17998A;--accent-hi:#4FC3B0;--warn:#D9A441;--shadow:0 12px 36px rgba(0,0,0,.5)}
+[data-theme="light"]{--bg:#F2F5F4;--surface:#FFF;--raise:#E9F1EF;--line:#D8E3E0;--ink:#0C1417;--muted:#5F7078;--accent:#0E7C6B;--accent-hi:#0E7C6B;--warn:#9A6F17;--shadow:0 10px 28px rgba(12,30,28,.1)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55;transition:background .3s,color .3s}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent-hi);outline-offset:3px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:560px;margin:0 auto;padding:14px 20px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:34px;height:34px;border-radius:9px;display:block}
+.brand .wm{font-family:Fraunces,serif;font-size:21px}
+.ctrls{display:flex;gap:9px}
+.orb{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:600}
+.langbox{position:relative}
+.langmenu{position:absolute;right:0;top:47px;background:var(--surface);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);padding:5px;display:none;min-width:140px;z-index:40}
+.langmenu.on{display:block}
+.langmenu button{display:flex;width:100%;gap:9px;background:none;border:none;color:var(--ink);padding:9px 11px;border-radius:9px;font-size:14px}
+.langmenu button:hover{background:var(--raise)}
+.langmenu button[aria-current="true"]{color:var(--accent-hi)}
+
+.hero{padding:24px 0 6px}
+.eye{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-hi)}
+h1{font-family:Fraunces,serif;font-weight:300;font-size:33px;line-height:1.1;margin:9px 0 10px;letter-spacing:-.01em}
+.lede{font-size:15px;color:var(--muted)}
+.cta{display:block;width:100%;margin-top:20px;background:var(--accent);border:none;border-radius:13px;padding:16px;font-weight:600;font-size:15px;color:#04100D;text-align:center;text-decoration:none}
+[data-theme="light"] .cta{color:#fff}
+.cta.ghost{background:none;border:1px solid var(--line);color:var(--ink);margin-top:9px}
+
+h2{font-family:Fraunces,serif;font-weight:400;font-size:23px;margin:34px 0 10px}
+p.b{font-size:14.5px;color:var(--muted);margin-bottom:12px}
+.card{border:1px solid var(--line);background:var(--surface);border-radius:15px;padding:17px;margin-bottom:11px}
+.card h3{font-size:15px;margin-bottom:5px}
+.card .n{font-family:Fraunces,serif;font-size:24px;color:var(--accent-hi);margin:6px 0 4px}
+.card p{font-size:13.5px;color:var(--muted)}
+.steps{counter-reset:s;list-style:none}
+.steps li{counter-increment:s;position:relative;padding-left:40px;margin-bottom:15px;font-size:14.5px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-1px;width:27px;height:27px;border-radius:50%;border:1px solid var(--accent);color:var(--accent-hi);display:flex;align-items:center;justify-content:center;font-size:13px}
+.steps small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.warn{border:1px solid var(--warn);border-radius:15px;padding:16px;font-size:13.5px;margin:16px 0}
+.warn b{color:var(--warn)}
+.src{font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:14px}
+footer{padding:36px 0 60px;text-align:center;font-size:15px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;display:inline-block;padding:8px 4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand"><img src="nrm-icon.svg" alt="" onerror="this.style.display='none'"><span class="wm">nRm</span></div>
+  <div class="ctrls">
+    <div class="langbox">
+      <button class="orb" id="langBtn" aria-label="Language" aria-expanded="false">PT</button>
+      <div class="langmenu" id="langMenu">
+        <button data-lang="pt">🇵🇹 Português</button>
+        <button data-lang="en">🇬🇧 English</button>
+        <button data-lang="ru">🇷🇺 Русский</button>
+        <button data-lang="es">🇪🇸 Español</button>
+        <button data-lang="de">🇩🇪 Deutsch</button>
+      </div>
+    </div>
+    <button class="orb" id="themeBtn" aria-label="Theme"><span id="themeIcon">☾</span></button>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eye" data-t="eye"></div>
+    <h1 data-t="h1"></h1>
+    <p class="lede" data-t="lede"></p>
+    <a class="cta" id="appBtn" href="index.html" data-t="ctaApp"></a>
+    <button class="cta ghost" id="shareBtn" data-t="shareBtn"></button>
+  </header>
+
+  <h2 data-t="s1"></h2>
+  <p class="b" data-t="s1p"></p>
+
+  <div class="card"><h3 data-t="c1t"></h3><div class="n" data-t="c1n"></div><p data-t="c1p"></p></div>
+  <div class="card"><h3 data-t="c2t"></h3><div class="n" data-t="c2n"></div><p data-t="c2p"></p></div>
+
+  <h2 data-t="s2"></h2>
+  <ol class="steps">
+    <li data-t="st1"></li><li data-t="st2"></li><li data-t="st3"></li><li data-t="st4"></li>
+  </ol>
+
+  <h2 data-t="s3"></h2>
+  <p class="b" data-t="s3p"></p>
+  <div class="warn" id="warn"></div>
+
+  <h2 data-t="s4"></h2>
+  <p class="b" data-t="s4p"></p>
+  <a class="cta" id="botBtn" href="#" data-t="ctaBot"></a>
+
+  <p class="src" data-t="src"></p>
+
+  <footer>
+    © <span id="yr"></span> <a href="https://seedwave.pt/hub/" id="hubLink" target="_blank" rel="noopener">SeedWave</a> ·
+    <a href="https://www.linkedin.com/in/igorkartuzov/" target="_blank" rel="noopener">Igor Kartuzov</a>
+  </footer>
+</div>
+
+<script>
+const BOT='https://t.me/SeedWaveBot?start=nrm';
+const T={
+pt:{lg:'PT',eye:'IEM · Madeira',h1:'O Estado entra consigo',
+ lede:'Na Madeira, quem contrata um desempregado inscrito no IEM recebe um apoio por cada posto criado. Não é um concurso e não tem prazo — está aberto em permanência.',
+ ctaApp:'Ver quanto recebo →',shareBtn:'Enviar a alguém',shareCopied:'Ligação copiada ✓',
+ s1:'Dois caminhos',s1p:'Consoante queira contratar já ou começar por um estágio de 12 meses.',
+ c1t:'PIC · contratar com contrato de trabalho',c1n:'4.704 € – 19.600 €',
+ c1p:'Por posto criado, uma vez. O valor depende de quem contrata e da duração do contrato. Sem termo paga mais do que a termo certo.',
+ c2t:'EP · estágio profissional de 12 meses',c2n:'até 1.079 €/mês',
+ c2p:'O IEM comparticipa 65% da bolsa mais alimentação, transporte e seguro. Se contratar no fim, junta-se o Prémio de Emprego de 3.920 € ou 7.840 €.',
+ s2:'Como se faz',
+ st1:'Confirme que a pessoa está inscrita no IEM<small>É a condição que trava a maioria das candidaturas.</small>',
+ st2:'Verifique as condições da empresa<small>Sede na Região, situação regularizada, contabilidade organizada, sem salários em atraso.</small>',
+ st3:'Apresente a candidatura antes de assinar o que for definitivo<small>A candidatura é online, na Plataforma de Candidaturas a Programas de Emprego.</small>',
+ st4:'Depois da aprovação, peça o pagamento<small>Também online, com os comprovativos do posto criado.</small>',
+ s3:'O que este apoio não faz',
+ s3p:'Vale a pena saber antes de contar com o dinheiro.',
+ warn:'<b>Só cobre quem está inscrito no IEM, na Madeira.</b> Quem chega de fora da Região não entra enquanto não estiver inscrito o tempo exigido. E o posto tem de ser criação líquida — substituir alguém que saiu não conta.',
+ s4:'Quer que eu confirme o seu caso?',
+ s4p:'Diga-me o perfil da pessoa e o tipo de contrato. Respondo com o valor e com o que falta para a candidatura passar.',
+ ctaBot:'Falar comigo',
+ src:'Fontes: IEM, IP-RAM — Programa de Incentivos à Contratação (Portaria n.º 191/2015, alterada pela Portaria n.º 913/2024) e Estágios Profissionais em entidades privadas (Portaria n.º 206/2018, alterada pela Portaria n.º 522/2023; Despacho n.º 110/2026). Valores de 2026: RMMG-RAM 980,00 €, IAS 537,13 €. Esta página não é uma decisão do IEM.',
+ shareText:'O Estado entra consigo. Vê em 3 perguntas quanto o IEM comparticipa quando contratas na Madeira:'},
+
+en:{lg:'EN',eye:'IEM · Madeira',h1:'The State chips in',
+ lede:'In Madeira, hiring someone registered as unemployed with IEM earns you a payment for each job created. It is not a competition and has no deadline — applications are open permanently.',
+ ctaApp:'See what I get →',shareBtn:'Send to someone',shareCopied:'Link copied ✓',
+ s1:'Two routes',s1p:'Depending on whether you hire now or start with a 12-month traineeship.',
+ c1t:'PIC · hiring on an employment contract',c1n:'€4,704 – €19,600',
+ c1p:'Per job created, once. The amount depends on who you hire and the term of the contract. Open-ended pays considerably more than fixed term.',
+ c2t:'EP · 12-month professional traineeship',c2n:'up to €1,079/month',
+ c2p:'IEM covers 65% of the allowance plus meals, transport and insurance. Hire the trainee at the end and the Employment Premium adds €3,920 or €7,840.',
+ s2:'How it is done',
+ st1:'Check the person is registered with IEM<small>This is the condition that stops most applications.</small>',
+ st2:'Check the company conditions<small>Registered in the Region, clear tax and Social Security standing, organised accounting, no overdue wages.</small>',
+ st3:'Apply before signing anything final<small>The application is online, on the Employment Programmes platform.</small>',
+ st4:'After approval, request payment<small>Also online, with proof of the job created.</small>',
+ s3:'What this support does not do',
+ s3p:'Worth knowing before you count on the money.',
+ warn:'<b>It only covers people registered with IEM in Madeira.</b> Someone arriving from outside the Region does not qualify until registered for the required period. And the job must be a net addition — replacing someone who left does not count.',
+ s4:'Want me to check your case?',
+ s4p:'Tell me the profile of the person and the type of contract. I come back with the figure and with what is missing for the application to pass.',
+ ctaBot:'Talk to me',
+ src:'Sources: IEM, IP-RAM — Hiring Incentives Programme (Portaria 191/2015, amended by Portaria 913/2024) and Professional Traineeships in private entities (Portaria 206/2018, amended by Portaria 522/2023; Despacho 110/2026). 2026 figures: RMMG-RAM €980.00, IAS €537.13. This page is not an IEM decision.',
+ shareText:'The State chips in. Three questions to see what IEM pays when you hire in Madeira:'},
+
+ru:{lg:'RU',eye:'IEM · Мадейра',h1:'Государство вкладывается с вами',
+ lede:'На Мадейре за наём человека, стоящего на учёте в IEM, платят за каждое созданное рабочее место. Это не конкурс и не имеет дедлайна — приём заявок открыт постоянно.',
+ ctaApp:'Посмотреть мою сумму →',shareBtn:'Отправить знакомому',shareCopied:'Ссылка скопирована ✓',
+ s1:'Два пути',s1p:'Смотря что вам нужно: нанять сразу или начать со стажировки на 12 месяцев.',
+ c1t:'PIC · наём по трудовому договору',c1n:'4 704 € – 19 600 €',
+ c1p:'За каждое созданное место, единовременно. Сумма зависит от того, кого нанимаете и на какой срок. Бессрочный договор даёт заметно больше срочного.',
+ c2t:'EP · стажировка на 12 месяцев',c2n:'до 1 079 €/мес',
+ c2p:'IEM компенсирует 65% стипендии плюс питание, транспорт и страховку. Возьмёте стажёра в штат по окончании — добавится премия 3 920 € или 7 840 €.',
+ s2:'Как это делается',
+ st1:'Убедитесь, что человек стоит на учёте в IEM<small>Именно это условие рубит большинство заявок.</small>',
+ st2:'Проверьте требования к компании<small>Регистрация в регионе, чистая налоговая и Segurança Social, организованная бухгалтерия, нет долгов по зарплате.</small>',
+ st3:'Подайте заявку до того, как подпишете окончательное<small>Заявка онлайн, на платформе программ занятости.</small>',
+ st4:'После одобрения запросите выплату<small>Тоже онлайн, с подтверждением созданного рабочего места.</small>',
+ s3:'Чего эта поддержка не делает',
+ s3p:'Стоит знать до того, как рассчитывать на деньги.',
+ warn:'<b>Работает только для тех, кто стоит на учёте в IEM на Мадейре.</b> Приехавший из другого региона не подходит, пока не отстоит на учёте нужный срок. И место должно быть чистым приростом — замена уволившегося не считается.',
+ s4:'Проверить ваш случай?',
+ s4p:'Напишите профиль человека и тип договора. Вернусь с суммой и с тем, чего не хватает, чтобы заявка прошла.',
+ ctaBot:'Обсудить со мной',
+ src:'Источники: IEM, IP-RAM — Программа стимулов к найму (Portaria 191/2015 в редакции Portaria 913/2024) и Профессиональные стажировки в частных организациях (Portaria 206/2018 в редакции Portaria 522/2023; Despacho 110/2026). Показатели 2026: RMMG-RAM 980,00 €, IAS 537,13 €. Эта страница не является решением IEM.',
+ shareText:'Государство вкладывается вместе с вами. Три вопроса — и видно, сколько платит IEM за наём на Мадейре:'},
+
+es:{lg:'ES',eye:'IEM · Madeira',h1:'El Estado entra contigo',
+ lede:'En Madeira, quien contrata a un desempleado inscrito en el IEM recibe una ayuda por cada puesto creado. No es un concurso ni tiene plazo — las solicitudes están abiertas de forma permanente.',
+ ctaApp:'Ver cuánto recibo →',shareBtn:'Enviar a alguien',shareCopied:'Enlace copiado ✓',
+ s1:'Dos caminos',s1p:'Según quieras contratar ya o empezar con unas prácticas de 12 meses.',
+ c1t:'PIC · contratar con contrato de trabajo',c1n:'4.704 € – 19.600 €',
+ c1p:'Por puesto creado, una sola vez. El importe depende de a quién contratas y de la duración del contrato. El indefinido paga bastante más que el temporal.',
+ c2t:'EP · prácticas profesionales de 12 meses',c2n:'hasta 1.079 €/mes',
+ c2p:'El IEM cubre el 65% de la beca más comida, transporte y seguro. Si contratas al final, se suma el Premio de Empleo de 3.920 € o 7.840 €.',
+ s2:'Cómo se hace',
+ st1:'Confirma que la persona está inscrita en el IEM<small>Es la condición que frena la mayoría de las solicitudes.</small>',
+ st2:'Revisa las condiciones de la empresa<small>Sede en la Región, situación al día, contabilidad organizada, sin salarios atrasados.</small>',
+ st3:'Presenta la solicitud antes de firmar nada definitivo<small>La solicitud es en línea, en la plataforma de programas de empleo.</small>',
+ st4:'Tras la aprobación, pide el pago<small>También en línea, con el justificante del puesto creado.</small>',
+ s3:'Lo que esta ayuda no hace',
+ s3p:'Conviene saberlo antes de contar con el dinero.',
+ warn:'<b>Solo cubre a quien está inscrito en el IEM, en Madeira.</b> Quien llega de fuera de la Región no entra hasta estar inscrito el tiempo exigido. Y el puesto debe ser creación neta — sustituir a alguien que se fue no cuenta.',
+ s4:'¿Quieres que revise tu caso?',
+ s4p:'Dime el perfil de la persona y el tipo de contrato. Vuelvo con el importe y con lo que falta para que la solicitud pase.',
+ ctaBot:'Hablar conmigo',
+ src:'Fuentes: IEM, IP-RAM — Programa de Incentivos a la Contratación (Portaria 191/2015, modificada por la Portaria 913/2024) y Prácticas Profesionales en entidades privadas (Portaria 206/2018, modificada por la Portaria 522/2023; Despacho 110/2026). Valores de 2026: RMMG-RAM 980,00 €, IAS 537,13 €. Esta página no es una decisión del IEM.',
+ shareText:'El Estado entra contigo. Tres preguntas para ver cuánto aporta el IEM al contratar en Madeira:'},
+
+de:{lg:'DE',eye:'IEM · Madeira',h1:'Der Staat steigt mit ein',
+ lede:'Wer auf Madeira jemanden einstellt, der beim IEM arbeitslos gemeldet ist, erhält eine Förderung je geschaffenem Arbeitsplatz. Kein Wettbewerb, keine Frist — Anträge sind dauerhaft möglich.',
+ ctaApp:'Meinen Betrag ansehen →',shareBtn:'Weiterleiten',shareCopied:'Link kopiert ✓',
+ s1:'Zwei Wege',s1p:'Je nachdem, ob Sie sofort einstellen oder mit einem 12-monatigen Praktikum beginnen.',
+ c1t:'PIC · Einstellung mit Arbeitsvertrag',c1n:'4.704 € – 19.600 €',
+ c1p:'Je geschaffenem Arbeitsplatz, einmalig. Die Höhe hängt davon ab, wen Sie einstellen und wie lange der Vertrag läuft. Unbefristet zahlt deutlich mehr als befristet.',
+ c2t:'EP · 12-monatiges Berufspraktikum',c2n:'bis 1.079 €/Monat',
+ c2p:'Das IEM übernimmt 65% der Vergütung plus Verpflegung, Fahrt und Versicherung. Übernehmen Sie danach, kommt die Beschäftigungsprämie von 3.920 € oder 7.840 € hinzu.',
+ s2:'So läuft es ab',
+ st1:'Prüfen, ob die Person beim IEM gemeldet ist<small>An dieser Bedingung scheitern die meisten Anträge.</small>',
+ st2:'Voraussetzungen des Betriebs prüfen<small>Sitz in der Region, keine Rückstände, ordnungsgemäße Buchführung, keine offenen Löhne.</small>',
+ st3:'Antrag stellen, bevor etwas Endgültiges unterschrieben wird<small>Der Antrag läuft online über die Plattform für Beschäftigungsprogramme.</small>',
+ st4:'Nach der Bewilligung die Auszahlung beantragen<small>Ebenfalls online, mit Nachweis des geschaffenen Arbeitsplatzes.</small>',
+ s3:'Was diese Förderung nicht leistet',
+ s3p:'Gut zu wissen, bevor Sie mit dem Geld rechnen.',
+ warn:'<b>Sie gilt nur für Personen, die auf Madeira beim IEM gemeldet sind.</b> Wer von außerhalb der Region kommt, qualifiziert sich erst nach der erforderlichen Meldedauer. Und die Stelle muss ein Netto-Zuwachs sein — ein Ersatz für jemanden, der gegangen ist, zählt nicht.',
+ s4:'Soll ich Ihren Fall prüfen?',
+ s4p:'Nennen Sie mir das Profil der Person und die Vertragsart. Ich melde mich mit dem Betrag und mit dem, was für den Antrag noch fehlt.',
+ ctaBot:'Mit mir sprechen',
+ src:'Quellen: IEM, IP-RAM — Programm für Einstellungsanreize (Portaria 191/2015, geändert durch Portaria 913/2024) und Berufspraktika in privaten Einrichtungen (Portaria 206/2018, geändert durch Portaria 522/2023; Despacho 110/2026). Werte 2026: RMMG-RAM 980,00 €, IAS 537,13 €. Diese Seite ist keine Entscheidung des IEM.',
+ shareText:'Der Staat steigt mit ein. Drei Fragen zeigen, was das IEM bei einer Einstellung auf Madeira zahlt:'}
+};
+
+const $=s=>document.querySelector(s);
+const P=new URLSearchParams(location.search);
+let lang=P.get('lang')||localStorage.getItem('nrm.lang')||(navigator.languages||[navigator.language||'pt']).map(l=>l.slice(0,2).toLowerCase()).find(l=>T[l])||'pt';
+if(!T[lang])lang='pt';
+let theme=P.get('theme')||localStorage.getItem('nrm.theme')||'dark';
+
+function paint(){
+  const t=T[lang];
+  document.querySelectorAll('[data-t]').forEach(el=>{if(t[el.dataset.t]!==undefined)el.textContent=t[el.dataset.t]});
+  document.querySelectorAll('.steps li').forEach((li,i)=>{li.innerHTML=t['st'+(i+1)]});
+  $('#warn').innerHTML=t.warn;
+  document.documentElement.lang=lang;
+  $('#langBtn').textContent=t.lg;
+  document.querySelectorAll('#langMenu button').forEach(b=>b.setAttribute('aria-current',b.dataset.lang===lang));
+  $('#yr').textContent=new Date().getFullYear();
+  $('#appBtn').href='index.html?lang='+lang+'&theme='+theme;
+  $('#botBtn').href=BOT+'_'+lang;
+  $('#hubLink').href='https://seedwave.pt/hub/?lang='+lang+'&theme='+theme;
+}
+function applyTheme(){
+  document.documentElement.dataset.theme=theme;
+  $('#themeIcon').textContent=theme==='dark'?'☾':'☀';
+  document.querySelector('meta[name=theme-color]').content=theme==='dark'?'#080D11':'#F2F5F4';
+  localStorage.setItem('nrm.theme',theme);
+}
+async function share(){
+  const t=T[lang], url='https://contratar.seedwave.pt/?lang='+lang;
+  try{ if(navigator.share){await navigator.share({title:'nRm — '+t.h1,text:t.shareText,url});return;} }catch(e){}
+  try{ await navigator.clipboard.writeText(t.shareText+' '+url);
+    const b=$('#shareBtn'),o=b.textContent;b.textContent=t.shareCopied;setTimeout(()=>b.textContent=o,1800);
+  }catch(e){}
+}
+$('#langBtn').addEventListener('click',e=>{e.stopPropagation();
+  const m=$('#langMenu');m.classList.toggle('on');
+  $('#langBtn').setAttribute('aria-expanded',m.classList.contains('on'));});
+document.addEventListener('click',e=>{
+  const lg=e.target.closest('[data-lang]');
+  if(lg){lang=lg.dataset.lang;localStorage.setItem('nrm.lang',lang);paint();}
+  if(!e.target.closest('#langBtn'))$('#langMenu').classList.remove('on');
+});
+$('#themeBtn').addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';applyTheme();paint();});
+$('#shareBtn').addEventListener('click',share);
+applyTheme();paint();
+</script>
+</body>
+</html>
